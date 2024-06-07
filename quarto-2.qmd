@@ -1,0 +1,24 @@
+---
+title: "Quarto 2"
+author: "Nathan Koshy"
+format: html
+execute: 
+  echo: false
+---
+```{r}
+#| label: setup
+#| message: false
+library(tidyverse)
+library(palmerpenguins)
+```
+
+```{r}
+#| label: make-plot
+#| warning: false
+penguins |> 
+  ggplot(aes(x = body_mass_g, y = flipper_length_mm, color = species)) +
+    geom_point() +
+    labs(title = "Penguins Body Mass compared to Flipper Length", 
+         x = "Body Mass", 
+         y = "Flipper Length")
+```
